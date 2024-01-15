@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\api\EnviormentalController;
+use App\Http\Controllers\api\MaterialsController;
+use App\Http\Controllers\api\SupplierController;
+use App\Http\Controllers\api\TypesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('types', TypesController::class);
+Route::resource('suppliers', SupplierController::class);
+Route::resource('enviormentals', EnviormentalController::class);
+Route::resource('materials', MaterialsController::class);
